@@ -1,0 +1,168 @@
+<html>
+
+<head>
+  <title>Booking</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="project_style.css" />
+
+
+</head>
+
+
+<body>
+  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="logo-color.png"><img src="logo-color.png" alt="logo"
+          style="width:42px;height:42px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Booking</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about-us.html">about us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact-us.html">Contact us</a>
+          </li>
+          <div class="dropdown">
+            <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" >
+              +
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Nutrition.html">Nutrition</a></li>
+              <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
+              <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
+              <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
+            </ul>
+          </div>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-primary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid mt-3">
+    <h1>Booking</h1>
+
+    <hr />
+
+    <h2>Booking a Nutritionists</h2>
+    <form action="test.php" method="post">
+      <label>
+        <p>choose the Nutritionist that you want to book an appointment with:</p>
+        <input type="radio" id="Jokha ALJassasi" name="Nutritionist" value="Jokha ALJassasi">Jokha ALJassasi<br />
+        <input type="radio" id="Nahla Al Anqoudi" name="Nutritionist" value="Nahla Al Anqoudi">Nahla Al Anqoudi
+        <br />
+        <input type="radio" id="Amira Al nasri" name="Nutritionist" value="Amira Al nasri">Amira Al nasri <br />
+        <input type="submit" value="Book" /> 
+        <input type="reset" value="clear"/>
+      </label>
+    </form>
+
+    <hr />
+
+    <h2 id="bookCoach">Booking a coach</h2>
+
+    <form action="test.php" method="post">
+      <label>
+        <p>choose the coach that you want to book an appointment with:</p>
+        <input type="radio" id="Alice" name="coach" value="Alice">Alice <br />
+        <input type="radio" id="Aly" name="coach" value="Aly">Aly <br />
+        <input type="radio" id="Amira AlAbri" name="coach" value="Amira AlAbri">Amira AlAbri <br />
+        <input type="submit" value="Book" />
+        <input type="reset" value="clear"/>
+      </label>
+    </form>
+
+    <hr />
+    <h2 id="BookingGym">Booking a gym</h2>
+    <form action="test.php" method="post">
+      <label for="city">select yor city:</label>
+      <br/>
+      <select name="city" id="city">
+        <label for="fname">select yor city:</label>
+        <option value="Al Kuwair">Al Kuwair</option>
+        <option value="Al Qurm">Al Qurm</option>
+        <option value="Al Azaiba">Al Azaiba</option>
+        <option value="Al Khoud">Al Khoud</option>
+        <option value="Al Mabellah">Al Mabellah</option>
+        <option value="Al Hail">Al Hail</option>
+        <option value="Sohar">Sohar</option>
+        <option value="Madinat As Sultan Qaboos">Madinat As Sultan Qaboos</option>
+        <option value="Barka">Barka</option>
+        <option value="Al Amerat">Al Amerat</option>
+        <option value="Salalah">Salalah</option>
+        <option value="Darsait">Darsait</option>
+        <option value="Ad Dakhiliyah-Nizwa">Ad Dakhiliyah-Nizwa</option>
+        <option value="Ash Sharqiyah">Ash Sharqiyah</option>
+        <option value="Musandam">Musandam</option>
+        <option value="Buraimi">Buraimi</option>
+      </select>
+      <br/>
+      <label for="gyms">select yor gym:</label>
+      <br/>
+      <select name="gyms" id="gyms">
+        <option value="flex">flex</option>
+        <option value="Horizon">Horizon</option>
+        <option value="style fitness">style fitness</option>
+        <option value="Alwafi fitness">Alwafi fitness</option>
+        <option value="Fitness center">Fitness center</option>
+        <option value="THE GYM">THE GYM</option>
+      </select>
+      <br/>
+      <label for="type">choose the type of the gym:</label>
+      <br/>
+  <input type="checkbox" id="type1" name="type1" value="Ladies">
+  <label for="type1"> Ladies</label><br>
+  <input type="checkbox" id="type2" name="type2" value="Men">
+  <label for="type2">Men</label><br>
+  <input type="checkbox" id="type3" name="type3" value="Separate Ladies and Men">
+  <label for="type3">Separate Ladies and Men</label><br>
+  <input type="checkbox" id="type4" name="type4" value="Mixed">
+  <label for="type4">Mixed</label><br>
+  <input type="checkbox" id="type5" name="type5" value="Ladies & Gents gym">
+  <label for="type5">Ladies & Gents gym</label><br/>
+  <input type="submit" value="Book" />
+  <input type="reset" value="clear"/>
+    </form>
+
+    <hr>
+    <footer>
+        <ul>
+            <li>
+                <p><a href="registration.html">join the build wellness family </a></p>
+            </li>
+            <li>
+                <p><a href="about-us.html">about us  </a></p>
+            </li>
+            <li>
+                <p><a href="contact-us.html">contact us </a></p>
+            </li>
+           
+        </ul>
+      </footer>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
