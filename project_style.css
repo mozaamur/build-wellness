@@ -1,0 +1,39 @@
+
+
+h1,h2{color: rgb(19,75,104); text-align: center;font-family: 'Times New Roman', Times, serif;font-weight: bold;}
+h3{color: rgb(0, 0, 0); text-align: center;font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: bold;}
+
+body{background-color: rgb(255,211,173);font-family: 'Times New Roman', Times, serif;font-weight: bold;justify-content: center;}
+hr { height: 5px; background-color:rgb(19,75,104) ;}
+table, th, td {border:3px solid black;}
+/* unvisited link */
+a:link {
+    color: #134b68;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: rgb(128, 0, 122);background-color: burlywood;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: rgb(223, 188, 114) ;background-color: #daac97;
+  }
+  
+  /* selected link */
+  a:active {
+    color: blue;
+  }
+  input:hover{
+    color: rgb(7, 7, 6) ;background-color: #daac97;
+  }
+  input[type=button]:hover, input[type=submit]:focus{
+    background-color: #134b68; color: white;
+  }
+
+  
+  
+
+
+
