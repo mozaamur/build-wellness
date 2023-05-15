@@ -1,212 +1,268 @@
+
 <html>
 
 <head>
-  <title>Questionnaire</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="project_style.css">
-  
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			$("#RegForm").submit(function(e){
-				e.preventDefault();
-				if (!ValidationForm()) {
-					return false;
-				}
-				//submit the form if all the validation has been passed
-				this.submit();
-			});
-		});
-
-		function ValidationForm() { // ValidationForm function to validate the form
-			var form = document.getElementById("RegForm");
-			// validate the email
-			// if the email address not in the form aaaa@aaa.aaa then return an alert
-			if(form.Email.value.search(/\w{3,20}@\w{2,10}\.\w{2,5}/)==-1) 
-			{
-				alert("Invalid email");
-				form.Email.focus();
-				return false;
-			}
-
-			// validate the Telephone number
-			// if the Telephone number less than on grater than 8 then return an alert
-			if(form.Telephone.value.search(/\d{8}/)==-1)
-			{
-				alert("Invalid Telephone Number");
-				form.Telephone.focus();
-				return false;
-			}
-
-			// validate the q1 (type radio)
-			// if q1 is empty othen return an alert
-			let q1 = $("input[name='Q1']:checked").val();
-			if (!q1) {
-				alert("Question 1  must be filled out");
-				return false;
-			}
-
-			// validate the q3 (type radio)
-			// if q3 is empty othen return an alert
-			let q3 = $("input[name='Q3']:checked").val();
-			if (!q3) {
-				alert("Question 3  must be filled out");
-				return false;
-			}
-
-			// validate the q4 (type radio)
-			// if q4 is empty othen return an alert
-			if(form.Q4.selectedIndex==0)
-			{
-				alert("Question 4  must be filled out");
-				form.Q4.focus();
-				return false;
-			}
-
-			// validate the q5 (type radio)
-			// if q5 is empty othen return an alert
-			if(form.Q5.selectedIndex==0)
-			{
-				alert("Question 5 must be filled out");
-				form.Q5.focus();
-				return false;
-			}
-
-			return true;
-		}
-	</script>
-
+    <title>Nutritions</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="project_style.css">
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+    </style>
+    
 </head>
 
-<body>
-	<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-		<div class="container-fluid">
-		  <a class="navbar-brand" href="logo-color.png"><img src="logo-color.png" alt="logo"
-			  style="width:42px;height:42px;">
-		  </a>
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="mynavbar">
-			<ul class="navbar-nav me-auto">
-			  <li class="nav-item">
-				<a class="nav-link" href="javascript:void(0)">Questionnaire</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="index.html">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="about-us.html">about us</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="contact-us.html">Contact us</a>
-			  </li>
-			  <div class="dropdown">
-				<button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" >
-				  +
-				</button>
-				<ul class="dropdown-menu">
-				  <li><a class="dropdown-item" href="Nutrition.html">Nutrition</a></li>
-				  <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
-				  <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
-				  <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
-				  <li><a class="dropdown-item" href="funpage.html">Funpage</a></li>
-				  <li><a class="dropdown-item" href="calculate2.html">calculate</a></li>                
-				</ul>
-			  </div>
-			</ul>
-			<form class="d-flex">
-			  <input class="form-control me-2" type="text" placeholder="Search">
-			  <button class="btn btn-primary" type="button">Search</button>
-			</form>
-		  </div>
-		</div>
-	  </nav>
-  <h1>Questionnaire</h1>
-  <hr />
-  <h2>Please full the Questionnaire</h2>
 
-  <div  class="container mt-3" >
-    <div class="card" style="width:600px ;margin-left: auto;
-    margin-right: auto;">
-        <div class="card-body">
-            <h4 class="card-title"></h4>
-            <form id="RegForm" action="" onsubmit="return ValidationForm()" method="post" >
-              <label for="E-mail">E-mail Address:</label>
-              <input type="text" size="60" name="Email"><br>
-              <label for="Telephone">Telephone: </label>
-              <input type="text" size="60" name="Telephone"> <br>
-          
-              <label>1-Have you ever heard about Build Wellness website?</label><br />
-              <input type="radio" name="Q1" value="Yes">Yes<br />
-              <input type="radio" name="Q1" value="No">No<br />
-          
-              <label>2-What do you use our website for?(you can choose more than one answer) </label><br />
-              <input type="checkbox" id="Nutritionists" value="Booking a Nutritionists">Booking a Nutritionists<br />
-              <input type="checkbox" id="Coaches" value="Booking a Coaches">Booking a Coaches<br />
-              <input type="checkbox" id="gym" value="Booking a gym">Booking a gym <br />
-              <input type="checkbox" id="Nutrition" value="Nutrition information">Nutrition information<br />
-              <input type="checkbox" id="fitness" value="fitness classes">fitness classes<br />
-          
-              <label>3-How easy is it to understand the information on our website?</label><br />
-              <input type="radio" name="Q3" value="Extremely easy">Extremely easy<br />
-              <input type="radio" name="Q3" value="very easy">very easy
-              <input type="radio" name="Q3" value="Somewhat easy">Somewhat easy<br />
-              <input type="radio" name="Q3" value="Not so easy">Not so easy
-              <input type="radio" name="Q3" value="Not at all easy">Not at all easy<br />
-          
-          
-              <label>4-How often do you visit our website?</label><br />
-              <select type="text" value="" name="Q4">
-                <option></option>
-                <option>Daily</option>
-                <option>Once a week</option>
-                <option>Once a month</option>
-                <option>Once a year</option>
-              </select> <br />
-          
-              <label>5-Overall, how satisfied are you with our website?</label><br />
-              <select type="text" value="" name="Q5">
-                <option></option>
-                <option value="Vary satisfied">Vary satisfied</option>
-                <option value="Satisfied">Satisfied</option>
-                <option value="Ok">Ok</option>
-                <option value="Disatisfied">Disatisfied</option>
-                <option value="Very Disatisfied">Very Disatisfied</option>
-          
-              </select>
-              <br />
-          
-              <label>6-particular aspect(s) of our website do you dislike?</label> <br />
-              <textarea id="Q6" rows="5" cols="50">
-                    </textarea>
-              <br />
-          
-              <input type="submit" value="Send" name="Submit">
-              <input type="reset" value="Reset" name="Reset">
-            </form>
-          
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="logo-color.png"><img src="logo-color.png" alt="logo"
+              style="width:42px;height:42px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">Nutrition</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="HealthyRestaurants.html">HealthyRestaurants</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about-us.html">about-us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact-us.html">Contact us</a>
+              </li>
+              <div class="dropdown">
+                <button type="button" class="btn btn-dark dropdown-toggle" data-bs-toggle="dropdown" >
+                  +
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="Coaches.php">Coach</a></li>
+                  <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
+                  <li><a class="dropdown-item" href="Booking.html">Booking</a></li>
+                  <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
+                  <li><a class="dropdown-item" href="funpage.html">Funpage</a></li>
+				  <li><a class="dropdown-item" href="Questionnaire.html">Questionnaire</a></li> 
+                  <li><a class="dropdown-item" href="calculate2.html">calculate</a></li> 
+                </ul>
+              </div>
+            </ul>
+            <form class="d-flex" method="get" action="searchBar.php">
+                <input class="form-control me-2" type="text" placeholder="Search" name="page">
+                <input class="btn btn-primary" type="submit" value="Search">
+                
+              </form>
+          </div>
+        </div>
+      </nav>
+
+    <h1 >Nutritions</h1>
+    <hr>
+    <h2>Our best Nutritionists/Dietitians:</h2>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="female icon.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Jokha ALJassasi</h4>
+                        <p class="card-text">Nutritionist</p>
+                        <p class="card-text">Speaks English and Arabic</p>
+                        <p>Jokha ALJassasi is a Nutritionist Licensed by the Ministry of health in Oman, certified Diabetes Educator with a degree in
+                            Weight Management and online consultation, she has successfully helped over
+                            890 people achieve their health, weight and nutrition goals.
+                        </p>
+
+                        <br/>
+                        <br/>
+                        <p>Her mission is to make weight loss and lifestyle management easy, engaging and accessible to all.</p>
+                        <br/>
+                        <p>Areas of speciality:
+                            <ul>
+                                <li>Athlete Nutrition</li>
+                                <li>Diet to lose weight post-pregnancy</li>
+                                <li>Diet for Thyroid/ Diabetes/ Cholesteroll</li>
+                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="female icon.png" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Nahla Al Anqoudi</h4>
+                        <p class="card-text">Nutritionist</p>
+                        <p class="card-text">Speaks English and Arabic</p>
+                        <p>Nahla Al Anqoudi is a Nutritionist Licensed by the Ministry of health in Oman, certified Diabetes Educator with a degree in
+                            Weight Management and online consultation, she has successfully helped over
+                            1000 people achieve their health, weight and nutrition goals.
+                        </p>
+
+                        <br/>
+                        <br/>
+                        <p>Her mission is to make weight loss and lifestyle management easy, engaging and accessible to all.</p>
+                        <br/>
+                        <p>Areas of speciality:
+                            <ul>
+                                <li>Athlete Nutrition</li>
+                                <li>Diet for Vitamin Deficiencies </li>
+                                <li>Diet for Acne / hair fall</li>
+                                
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 
+    <div class="container mt-3">
+        <div class="card" style="width:400px">
+            <img class="card-img-top" src="female icon.png" alt="Card image" style="width:100%">
+            <div class="card-body">
+                <h4 class="card-title">Amira Al nasri</h4>
+                <p class="card-text">Nutritionist</p>
+                <p class="card-text">Speaks English and Arabic</p>
+                        <p>Amira Al nasri is a Nutritionist Licensed by the Ministry of health in Oman, certified Diabetes Educator with a degree in
+                            Weight Management and online consultation, she has successfully helped over
+                            2000 people achieve their health, weight and nutrition goals.
+                        </p>
+
+                        <br/>
+                        <br/>
+                        <p>Her mission is to make weight loss and lifestyle management easy, engaging and accessible to all.</p>
+                        <br/>
+                        <p>Areas of speciality:
+                            <ul>
+                                <li>Athlete Nutrition</li>
+                                <li>Diet to lose weight post-pregnancy</li>
+                                <li>Diet for Vitamin Deficiencies  </li>
+                                <li>Diet for Thyroid/ Diabetes/ Cholesteroll</li>
+                                
+                            </ul>
+                        </p>             
+            </div>
+        </div>
+    </div>
+
+    </br>
+    <hr>
+    <p>To Book A Nutritionist click this button:</p>
+    <button onclick="document.location='Booking.html'" class="btn btn-light">Nutritionists</button>
+    </br>
+    <hr>
+
+
+    <div class="container">
+        <div class="image">
+            <img src="VitaminA.png">
+        </div>
+        <div class="text">
+            <h3 style="color:#134b68">Vitamin A</h3>
+            <p>Since vitamin A is fat-soluble, your body can store it.
+                You can get it from a variety of foods, including carrots and cantaloupe,
+                so if you follow a healthy diet, you probably get enough of it.
+                However, people who have specific medical conditions are more vulnerable
+                to deficiencies and may benefit from taking a supplement.
+            </p>
+        </div>
+    </div>
+
+
+    <hr>
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <div class="col-6">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="protein.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">5 hight-protein foods</h4>
+                        <p class="card-text">
+                        <ol>
+                            <li>Fatty Fish</li>
+                            <li>Low-Fat or Non-Fat Plain Yogurt</li>
+                            <li>Nuts</li>
+                            <li>Seeds</li>
+                            <li>Beans</li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card" style="width:400px">
+                    <img class="card-img-top" src="chocolate.jpg" alt="Card image" style="width:100%">
+                    <div class="card-body">
+                        <h4 class="card-title">Risks of eating chocolate before bed </h4>
+                        <p class="card-text">
+                        <ol>
+                            <li>It can Sabotage your sleep</li>
+                            <li>It can make you sleepy</li>
+                            <li>causes inflammation</li>
+                        </ol>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <hr>
+    <h2>The 2015-2023 Dietary Guidelines recommends eating within the following ranges:</h2>
+
+    
+    <br />
+    <br />
+
+    
+    <form action="table.php" method="post">
+        <input type="submit" value="Show the Table">
+        
 
 <hr>
-<footer>
-	<ul>
-		<li>
-			<p><a href="registration.html">join the build wellness family </a></p>
-		</li>
-		<li>
-			<p><a href="about-us.html">about us  </a></p>
-		</li>
-		<li>
-			<p><a href="contact-us.html">contact us </a></p>
-		</li>
-	   
-	</ul>
-  </footer>
+
+    <p>click <span> <button onclick="document.location='HealthyRestaurants.html'" class="btn btn-light">healthy
+                restaurants</button> </span> to see the most famous haelthy restaurants </p>
+    <hr>
+
+    <hr>
+    <footer>
+        <ul>
+            <li>
+                <p><a href="registration.html">join the build wellness family </a></p>
+            </li>
+            <li>
+                <p><a href="about-us.html">about us  </a></p>
+            </li>
+            <li>
+                <p><a href="contact-us.html">contact us </a></p>
+            </li>
+           
+        </ul>
+      </footer>
+
+
 
 </body>
 
