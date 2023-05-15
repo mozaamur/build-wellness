@@ -1,3 +1,4 @@
+
 <html>
     <head><title>log in</title>
         
@@ -6,6 +7,7 @@
         <link rel="stylesheet" href="project_style.css">
         <style>
             .header{background-color: rgb(210, 216, 228); text-align: center;}
+            .footer{text-decoration: underline;color: rgb(19,75,104);}
             .container {
             display: flex;
             align-items: center;
@@ -42,16 +44,17 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="Nutrition.html">Nutrition</a></li>
-                      <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
+                      <li><a class="dropdown-item" href="Coaches.php">Coach</a></li>
                       <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
                       <li><a class="dropdown-item" href="Booking.html">Booking</a></li>
                       <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
                     </ul>
                   </div>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="text" placeholder="Search">
-                  <button class="btn btn-primary" type="button">Search</button>
+                <form class="d-flex" method="get" action="searchBar.php">
+                  <input class="form-control me-2" type="text" placeholder="Search" name="page">
+                  <input class="btn btn-primary" type="submit" value="Search">
+                  
                 </form>
               </div>
             </div>
@@ -59,33 +62,33 @@
         <h1>Live Your Best Life</h1>
         <h3>join the build wellness family to make your life aesy and healthy</h3>
     </body>
-
+    
     <div  class="container mt-3" >
       <div class="card" style="width:600px;">
           <img class="card-img-top" src="logo2.jpg" alt="Card image" style="width:100%">
           <div class="card-body">
               <h4 class="card-title"></h4>
-              <form action="test.php" method="post" style="text-align: center;">
+              <form action="login.php" method="post" style="text-align: center;">
        
-                Enter your name: <br/><input type="text"> <br/> <br/>
+                Enter your name: <br/><input type="text" name="name"> <br/> <br/>
                
                 select your gender:  <br/> 
                 <label><input type="radio" name="gender" value="male"/> Male</label>
                 <label><input type="radio" name="gender" value="female"/> female</label>
                 <label><input type="radio" name="gender" value="none"/> prefer not say</label>
                <br/> 
-               <label>Enter your age: <br/><input type="text"></label> <br/> <br/>
-               <label> Enter your weight:<br/><input type="text"></label> <br/> <br/>
-               <label>Enter your height:<br/><input type="text"></label> <br/> <br/>
+               <label>Enter your age: <br/><input type="text" name="age"></label> <br/> <br/>
+               <label> Enter your weight:<br/><input type="text" name="weight"></label> <br/> <br/>
+               <label>Enter your height:<br/><input type="text" name="height"></label> <br/> <br/>
                <label> Do you have a midecal history:<br/>
                 <label><input type="radio" name="midecal" value="Yes"/> Yes</label>
                 <label><input type="radio" name="midecal" value="No"/> No</label>
               </label> <br/> <br/>
-               <label> Enter your midecal history (if you have):<br/><input type="text"></label> <br/> <br/>
-               <label> Enter your phone number:<br/><input type="text"></label> <br/> <br/>
-               <label> Enter your email:<br/><input type="text"> <br/></label> <br/><br/>
-               <label> creat a password:<br/><input type="password"> <br/></label> <br/><br/>
-               <label> Enter your city:<br/><input type="text"> <br/></label> <br/><br/>
+               <label> Enter your midecal history (if you have):<br/><input type="text" name="midecal2"></label> <br/> <br/>
+               <label> Enter your phone number:<br/><input type="text" name="phone"></label> <br/> <br/>
+               <label> Enter your email:<br/><input type="text" name="email"> <br/></label> <br/><br/>
+               <label> creat a password:<br/><input type="password" name="pass"> <br/></label> <br/><br/>
+               <label> Enter your city:<br/><input type="text" name="city"> <br/></label> <br/><br/>
                <input type="hidden" value="log in sucssed">
                 <input type="submit" value="log in"/>
                 <input type="reset" value="clear"/>
@@ -96,6 +99,16 @@
           </div>
       </div>
   </div>
+    <hr>
+    <h3>be our freind</h3>
+        <form action="insert.php" method="POST">
+            Name: <input type="text" name="name"><br>
+            Age: <input type="text" name="age"><br>
+            Email: <input type="email" name="email"><br>
+            <input type="submit" value="Add">
+        </form>
+
+    
     <hr>
     <footer>
         <ul>
