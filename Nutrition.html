@@ -1,3 +1,4 @@
+
 <html>
 
 <head>
@@ -49,7 +50,7 @@
                   +
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
+                  <li><a class="dropdown-item" href="Coaches.php">Coach</a></li>
                   <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
                   <li><a class="dropdown-item" href="Booking.html">Booking</a></li>
                   <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
@@ -59,14 +60,14 @@
                 </ul>
               </div>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button">Search</button>
-            </form>
+            <form class="d-flex" method="get" action="searchBar.php">
+                <input class="form-control me-2" type="text" placeholder="Search" name="page">
+                <input class="btn btn-primary" type="submit" value="Search">
+                
+              </form>
           </div>
         </div>
       </nav>
-      
 
     <h1 >Nutritions</h1>
     <hr>
@@ -235,43 +236,9 @@
     <br />
 
     
-    
-    <div id="table-container"></div>
-        <script type="text/javascript">
-            
-            function createTableFromObjects(data) {
-      const table = document.createElement('table');
-      const headerRow = document.createElement('tr');
-      
-      // Create table header row
-      const keys = Object.keys(data[0]);
-      for (const key of keys) {
-        const headerCell = document.createElement('th');
-        headerCell.textContent = key;
-        headerRow.appendChild(headerCell);
-      }
-      table.appendChild(headerRow);
-    
-      // Create table data rows
-      for (const obj of data) {
-        const dataRow = document.createElement('tr');
-        for (const key of keys) {
-          const dataCell = document.createElement('td');
-          dataCell.textContent = obj[key];
-          dataRow.appendChild(dataCell);
-        }
-        table.appendChild(dataRow);
-      }
-    
-      return table;
-    }
-    const data =[ {name:"carbs",recomandedRange:"45-65%",lowerCarbHigherProtine:"45%",lowerCarbAndFatHigherProtine:"45%"},
-            {name:"protine",recomandedRange:"10-35%",lowerCarbHigherProtine:"25%",lowerCarbAndFatHigherProtine:"30%"},
-            {name:"fat",recomandedRange:"20-35%",lowerCarbHigherProtine:"30%",lowerCarbAndFatHigherProtine:"25%"}]
-    const table = createTableFromObjects(data);
-    const tableContainer = document.getElementById('table-container');
-    tableContainer.appendChild(table);
-        </script>
+    <form action="table.php" method="post">
+        <input type="submit" value="Show the Table">
+        
 
 <hr>
 
