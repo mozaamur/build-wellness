@@ -1,3 +1,4 @@
+
 <html>
     <head><title>index</title>
         
@@ -90,7 +91,7 @@ img {vertical-align: middle;}
                   <a class="nav-link" href="about-us.html">about us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="Coaches.html">Coaches</a>
+                    <a class="nav-link" href="Coaches.php">Coaches</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="Nutrition.html">Nutrition</a>
@@ -123,9 +124,10 @@ img {vertical-align: middle;}
                     <a class="nav-link" href="contact-us.html">Contact us</a>
                 </li>
               </ul>
-              <form class="d-flex">
-                <input class="form-control me-2" type="text" placeholder="Search">
-                <button class="btn btn-primary" type="button">Search</button>
+              <form class="d-flex" method="get" action="searchBar.php">
+                <input class="form-control me-2" type="text" placeholder="Search" name="page">
+                <input class="btn btn-primary" type="submit" value="Search">
+                
               </form>
             </div>
           </nav>
