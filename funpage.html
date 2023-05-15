@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -38,7 +39,7 @@
 					</button>
 					<ul class="dropdown-menu">
 					  <li><a class="dropdown-item" href="Nutrition.html">Nutrition</a></li>
-					  <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
+					  <li><a class="dropdown-item" href="Coaches.php">Coach</a></li>
 					  <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
 					  <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
 					  <li><a class="dropdown-item" href="Questionnaire.html">Questionnaire</a></li>
@@ -46,10 +47,11 @@
 					</ul>
 				  </div>
 				</ul>
-				<form class="d-flex">
-				  <input class="form-control me-2" type="text" placeholder="Search">
-				  <button class="btn btn-primary" type="button">Search</button>
-				</form>
+				<form class="d-flex" method="get" action="searchBar.php">
+          <input class="form-control me-2" type="text" placeholder="Search" name="page">
+          <input class="btn btn-primary" type="submit" value="Search">
+          
+        </form>
 			  </div>
 			</div>
 		  </nav>
