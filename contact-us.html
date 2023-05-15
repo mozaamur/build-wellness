@@ -1,3 +1,4 @@
+
 <html>
     <head><title>contact us</title>
         
@@ -39,16 +40,17 @@
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="Nutrition.html">Nutrition</a></li>
-                      <li><a class="dropdown-item" href="Coaches.html">Coach</a></li>
+                      <li><a class="dropdown-item" href="Coaches.php">Coach</a></li>
                       <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
                       <li><a class="dropdown-item" href="Booking.html">Booking</a></li>
                       <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
                     </ul>
                   </div>
                 </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="text" placeholder="Search">
-                  <button class="btn btn-primary" type="button">Search</button>
+                <form class="d-flex" method="get" action="searchBar.php">
+                  <input class="form-control me-2" type="text" placeholder="Search" name="page">
+                  <input class="btn btn-primary" type="submit" value="Search">
+                  
                 </form>
               </div>
             </div>
@@ -63,11 +65,11 @@
        
     <h3 style="text-align: center;">If you have something to share please contact us through the email</h3>
     <h3>our email is here:</h3>
-    <p align="center" ><a href="s134665@student.squ.edu.om" >Sara AlJassasi</a><br/>
-    <a href="s135058@student.squ.edu.om" >Moza alIsmaili</a><br/>
-    <a href="s133165@student.squ.edu.om">Rayan Alhinai</a><br/></p>
+    <p align="center" ><a href="mailto:s134665@student.squ.edu.om" >Sara AlJassasi</a><br/>
+    <a href="mailto:s135058@student.squ.edu.om" >Moza alIsmaili</a><br/>
+    <a href="mailto:s133165@student.squ.edu.om">Rayan Alhinai</a><br/></p>
      <hr>
-    <form action="test.php" method="post">
+    <form action="contact.php" method="post">
       <p style="margin-left:1% ;">
         <textarea name = "aspirations"  rows = "5" cols = "50" >
           Add your feedback
