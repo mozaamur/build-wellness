@@ -6,7 +6,7 @@
         .container {
             display: flex;
             align-items: center;
-            justify-content: center
+            justify-content: center;
         }
     </style>
     <meta charset="utf-8">
@@ -50,12 +50,16 @@
                   <li><a class="dropdown-item" href="gyms.html">Gym</a></li>
                   <li><a class="dropdown-item" href="Booking.html">Booking</a></li>
                   <li><a class="dropdown-item" href="Experience.html">Experience</a></li>
+                  <li><a class="dropdown-item" href="funpage.html">Funpage</a></li>
+				  <li><a class="dropdown-item" href="Questionnaire.html">Questionnaire</a></li> 
+                  <li><a class="dropdown-item" href="calculate2.html">calculate</a></li> 
                 </ul>
               </div>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="text" placeholder="Search">
-              <button class="btn btn-primary" type="button">Search</button>
+            <form class="d-flex" method="get" action="searchBar.php">
+              <input class="form-control me-2" type="text" placeholder="Search" name="page">
+              <input class="btn btn-primary" type="submit" value="Search">
+              
             </form>
           </div>
         </div>
@@ -127,6 +131,64 @@
             </div>
         </div>
     </div>
+    <hr>
+    <h3>Coaches table</h3>
+    <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "project";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+?>
+
+    <?php
+// SQL query to fetch data from the database
+$sql = "SELECT * FROM coaches";
+
+// Execute the query
+$result = $conn->query($sql);
+?>
+<?php
+// Check if any rows are returned
+if ($result->num_rows > 0) {
+    echo "<table border=2>";
+    echo "<tr><th>Name</th><th>Gender</th><th>Number</th></tr>";
+    
+    // Output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<tr><td>".$row["name"]."</td><td>".$row["gender"]."</td><td>".$row["number"]."</td></tr>";
+    }
+    
+    echo "</table>";
+} else {
+    echo "No results found";
+}
+?>
+<?php
+// Close the connection
+$conn->close();
+?>
+
+
+
+
+    <hr>
+    <h3>Delete a coaches</h3>
+    <form method="POST" action="delete.php">
+  <label for="name">Coach Name:</label>
+  <input type="text" name="name" id="name">
+  <input type="submit" value="Delete">
+</form>
+
+
+  
     <hr>
     <p>To Book A Sport and fitness coach click this button:</p>
     <a href="Booking.html#bookCoach" class="btn btn-light">Coach</a>
